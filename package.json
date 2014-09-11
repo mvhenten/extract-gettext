@@ -1,0 +1,29 @@
+{
+    "name": "extract-gettext",
+    "version": "0.0.1",
+    "description": "Extract gettext strings from __('literal') and __n('single', 'plural', n ) functions in any source",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mvhenten/extract-gettext.git"
+    },
+    "keywords": [
+    "gettext",
+    "i18n",
+    "extract",
+    "scan"
+  ],
+    "author": "Matthijs van Henten",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mvhenten/extract-gettext/issues"
+    },
+    "homepage": "https://github.com/mvhenten/extract-gettext",
+    "devDependencies": {
+        "js-beautify": "^1.5.1",
+        "jshint": "^2.5.5"
+    }
+}
