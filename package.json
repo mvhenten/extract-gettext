@@ -3,8 +3,11 @@
     "version": "0.0.1",
     "description": "Extract gettext strings from __('literal') and __n('single', 'plural', n ) functions in any source",
     "main": "index.js",
+    "bin": {
+        "extract-gettext": "./bin/extract-gettext"
+    },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "node test/scan.js"
     },
     "repository": {
         "type": "git",
@@ -24,6 +27,14 @@
     "homepage": "https://github.com/mvhenten/extract-gettext",
     "devDependencies": {
         "js-beautify": "^1.5.1",
-        "jshint": "^2.5.5"
+        "jshint": "^2.5.5",
+        "tape": "^2.14.0"
+    },
+    "dependencies": {
+        "async": "^0.9.0",
+        "commander": "^2.3.0",
+        "glob": "^4.0.5",
+        "lex": "^1.7.6",
+        "lodash": "^2.4.1"
     }
 }
