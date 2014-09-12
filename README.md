@@ -1,6 +1,8 @@
 extract-getext
 ==============
 
+[![Build Status](https://drone.io/github.com/mvhenten/extract-gettext/status.png)](https://drone.io/github.com/mvhenten/extract-gettext/latest)
+
 Extract gettext strings from `__('literal')` and `__n('single', 'plural', n )` functions in any source.
 This module currently only looks for the `__` and `__n`. However, adding other signatures is trivial (see lex.js).
 
