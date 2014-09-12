@@ -19,12 +19,25 @@ When outputting a .json file, the format is usable by [i18n-conv](https://www.np
     
 ### API
 
-```javascript
-    var scan = require('extract-gettext');
+( as taken from the "test" )
 
-    scan(__dirname + '/../test/*', function(err, strings) {
-        assert.deepEqual(strings, expect, 'Retrieved expected strings');
-        assert.end();
+```javascript
+    test('scanner', function(assert) {
+        var expect = ['Plain old singluar',
+          'as the other',
+          'duplicate strings are filtered',
+          'error, but it works',
+          'even mixing goes',
+          'like this',
+          'one on the same line',
+          'or that',
+          'plural',
+          'single'];
+    
+        scan(__dirname + '/../test/*', function(err, strings) {
+            assert.deepEqual(strings, expect, 'Retrieved expected strings');
+            assert.end();
+        });
     });
 ```
 
