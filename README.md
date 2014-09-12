@@ -1,7 +1,7 @@
 extract-getext
 ==============
 
-Extract gettext strings from __('literal') and __n('single', 'plural', n ) functions in any source.
+Extract gettext strings from `__('literal')` and `__n('single', 'plural', n )` functions in any source.
 This module currently only looks for the `__` and `__n`. However, adding other signatures is trivial (see lex.js).
 
 It does not do proper plurals - it just smashes everything into one flat structure.
