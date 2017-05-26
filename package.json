@@ -7,7 +7,7 @@
         "extract-gettext": "./bin/extract-gettext.js"
     },
     "scripts": {
-        "test": "node test/scan.js"
+        "test": "node test/lex.js"
     },
     "repository": {
         "type": "git",
