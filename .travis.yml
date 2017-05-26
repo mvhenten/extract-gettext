@@ -1,7 +1,6 @@
 node_js:
   - 6
 before_install:
-  - npm i yarn
-  - yarn
+  - npm i
 script:
-  - yarn test
+  - npm test
