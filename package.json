@@ -1,6 +1,6 @@
 {
     "name": "extract-gettext",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "description": "Extract gettext strings from __('literal') and __n('single', 'plural', n ) functions in any source",
     "main": "index.js",
     "bin": {
