@@ -4,9 +4,9 @@ extract-getext
 [![Build Status](https://drone.io/github.com/mvhenten/extract-gettext/status.png)](https://drone.io/github.com/mvhenten/extract-gettext/latest)
 
 Extract gettext strings from `__('literal')` and `__n('single', 'plural', n )` functions in any source.
-This module currently only looks for the `__` and `__n`. However, adding other signatures is trivial (see lex.js).
+This module currently only looks for the `__` and `__n` function signatures.
 
-It does not do proper plurals - it just smashes everything into one flat structure, wich, actually, is similar to what the real `xgettext` does. 
+The format produced by this package is similar to the output of `xgettext`, containing all strings in one flat array.
 When outputting a .json file, the format is usable by [i18next-conv](https://www.npmjs.org/package/i18next-conv).
 
 ## Install
@@ -17,38 +17,45 @@ When outputting a .json file, the format is usable by [i18next-conv](https://www
 
 ### CLI
 
-    extract-gettext -o strings.json /path/to/sources
+    extract-gettext -o <output file> -x <exclude pattern> **/*.js
     
 ### API
 
 ( as taken from the "test" )
 
 ```javascript
-    test('scanner', function(assert) {
-        var expect = ['Plain old singluar',
-          'as the other',
-          'duplicate strings are filtered',
-          'error, but it works',
-          'even mixing goes',
-          'like this',
-          'one on the same line',
-          'or that',
-          'plural',
-          'single'];
+
+    let scan = require("extract-gettext");
+
+    function x(__, __n) {
+        __('This is a singular translation %s', 'replacement');
+        __('Plain old singluar');
+        __n('single', 'plural', 1, 'cats');
+        __n('error, but it works');
+        __('one on the same line');
+        __('as the other');
+        __('even mixing goes');
+        __n('like this', 'or that', 3);
+        __('duplicate strings are filtered');
+        __('duplicate strings are filtered');
+        __('duplicate strings are filtered');
+        __("Oh, and by the way: don't fail on this!");
+        __('Oh, and by the way: this don\'t fly either!');
+        __n('What\'s in a count', 'Won\'t you count it', 3);
+        __('Accept (parenthesis) in a string');
+        __n("we can have some (parenthesis)", "we can have one (parenthesis)", 3);
+        __('a "string" can have quotes');
+        __("a 'string' can have quotes");
+        __("a string can \" mix a quote in various ways");
+    }
     
-        scan(__dirname + '/../test/*', function(err, strings) {
-            assert.deepEqual(strings, expect, 'Retrieved expected strings');
-            assert.end();
-        });
-    });
+    let strings = scan([__filename]);
+    
+    console.log(strings);
 ```
 ## background
 
-I wasn't going to write yet another variety of `xgettext`. `xgettext` has good support for javascript, and extracts strings faster then this tool.
-However, I need a little bit of flexibility. `xgettext` is hardcoded for the `_('literal')` notation, a namespace usually occupied by `lodash` in my world.
-As a small benefit, this small variety uses a simple lexer to extract translations, but it really doesn't care what programming language you've written your files in.
-
-That may come in handy one day for coffeescript, typescript or even ES6.
+The tool `xgettext` has good support for javascript, and extracts strings faster then this tool, but is hardcoced for the `_('literal')` notation.
 
 Some other good tools exist, such as:
 
@@ -57,5 +64,5 @@ Some other good tools exist, such as:
 
 ## roadmap and future development
 
-I'm propably not going to update this tool as it works for me and it works fast and decent enough. I have too little knowledge of the various .json and .po formats for pluralization and the "specs" seem a bit ambigious to me. However, maybe I misread something, so if you would like to use this and need this type of functionality, send me an example of the desired output format with some explaination :)
+Please drop me a personal note on matthijsatischendotnl if you want to use this and I need to fix things.
 
