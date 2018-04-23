@@ -1,6 +1,8 @@
 extract-getext
 ==============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mvhenten/extract-gettext.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://drone.io/github.com/mvhenten/extract-gettext/status.png)](https://drone.io/github.com/mvhenten/extract-gettext/latest)
 
 Extract gettext strings from `__('literal')` and `__n('single', 'plural', n )` functions in any source.
