@@ -1,7 +1,7 @@
 extract-getext
 ==============
 
-[![Build Status](https://drone.io/github.com/mvhenten/extract-gettext/status.png)](https://drone.io/github.com/mvhenten/extract-gettext/latest)
+[![Build Status](https://travis-ci.org/mvhenten/extract-gettext.svg?branch=master)](https://travis-ci.org/mvhenten/extract-gettext)
 
 Extract gettext strings from `__('literal')` and `__n('single', 'plural', n )` functions in any source.
 This module currently only looks for the `__` and `__n` function signatures.
