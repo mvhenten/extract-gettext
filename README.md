@@ -3,6 +3,8 @@ extract-getext
 
 [![Build Status](https://travis-ci.org/mvhenten/extract-gettext.svg?branch=master)](https://travis-ci.org/mvhenten/extract-gettext)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mvhenten/extract-gettext.svg)](https://greenkeeper.io/)
+
 Extract gettext strings from `__('literal')` and `__n('single', 'plural', n )` functions in any source.
 This module currently only looks for the `__` and `__n` function signatures.
 
