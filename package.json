@@ -28,7 +28,7 @@
   "devDependencies": {
     "assert-diff": "^1.2.6",
     "js-beautify": "^1.5.1",
-    "jshint": "^2.5.5",
+    "jshint": "^2.10.2",
     "tape": "^4.9.0"
   },
   "dependencies": {
