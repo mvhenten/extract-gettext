@@ -27,7 +27,7 @@
   "homepage": "https://github.com/mvhenten/extract-gettext",
   "devDependencies": {
     "assert-diff": "^1.2.6",
-    "js-beautify": "^1.5.1",
+    "js-beautify": "^1.9.1",
     "jshint": "^2.5.5",
     "tape": "^4.9.0"
   },
